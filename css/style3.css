@@ -1,0 +1,44 @@
+.navCol {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+background-image: linear-gradient(to right, #62BCFC , #8490FF);
+}
+#icol{
+    color:white;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#icol:hover{
+    background-color:#8490FF;
+}
+.homeImg{
+    padding: 400px;
+    background: url(../img/homeimg.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.login{
+    padding-top: 200px;
+}
+
+.butlog{
+    background-image: linear-gradient(to right, #62BCFC , #8490FF);
+    color: wheat;
+    font-weight: bold;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.inputlog{
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.prof{
+    color: rgb(88, 88, 88);
+    padding: 30px;
+    font-size: 1.5rem;
+}
+.butadd{
+    padding: 20px;
+}
+.lec{
+    padding: 20px 20px 0px 20px;
+    font-size: 1.5rem;
+}
