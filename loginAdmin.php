@@ -14,6 +14,7 @@ $link = mysqli_connect($host,$user,$password,$db);
 if (isset($_POST['email'])){
     $email =  $_POST['email'];
     $password = $_POST['password'];
+    $password = md5($password);
 
     $sql = "select * from admin where email = '".$email."' AND pass = '".$password."'";
 

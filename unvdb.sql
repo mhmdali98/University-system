@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2019 at 05:00 AM
+-- Generation Time: Apr 14, 2019 at 11:43 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
   `email` varchar(25) NOT NULL,
-  `pass` varchar(15) NOT NULL,
+  `pass` varchar(60) NOT NULL,
   `name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `email`, `pass`, `name`) VALUES
-(1, 'admin@uoitc.org', '1234', 'admin');
+(1, 'admin@uoitc.org', '81dc9bdb52d04dc20036dbd8313ed055', 'admin');
 
 -- --------------------------------------------------------
 
@@ -61,11 +61,7 @@ CREATE TABLE `degrees` (
 --
 
 INSERT INTO `degrees` (`ID_deg`, `stu_id`, `lec_lab_id`, `deg_number`, `corse`) VALUES
-(29, 4, 25, 5, 1),
-(30, 5, 25, 54, 1),
-(32, 5, 26, 76, 1),
-(34, 4, 26, 55, 1),
-(36, 6, 26, 98, 1);
+(38, 17, 27, 99, 1);
 
 -- --------------------------------------------------------
 
@@ -85,8 +81,8 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`ID_dep`, `dep_name`, `dep_sub_name`, `unv_id`) VALUES
-(1, 'Management Informatic System', 'MIS', NULL),
-(4, 'bits', 'bit', 11);
+(5, 'business information technology', 'BIT', 12),
+(6, 'information system management', 'ISM', 12);
 
 -- --------------------------------------------------------
 
@@ -110,11 +106,7 @@ CREATE TABLE `lecture_lab` (
 --
 
 INSERT INTO `lecture_lab` (`ID_lec_lab`, `lec_lab_name`, `lec_lab_sub_name`, `id_stf`, `name_stf`, `lec_lab_corse`, `id_dep`, `stageLec`) VALUES
-(21, 'compuoter sys', 'cs', 1, 'ayoob ahmed', 1, 4, 4),
-(23, 'java programming', 'java', 3, 'mohammed ali', 2, 4, 3),
-(24, 'system analysis', 'SA', 3, 'mohammed ali', 1, 1, 2),
-(25, 'operation management', 'OM', 3, 'mohammed ali', 1, 1, 4),
-(26, 'project management', 'PM', 3, 'mohammed ali', 1, 1, 4);
+(27, 'programming langauge in java', 'JAVA', 4, 'mohammed ali', 1, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -128,7 +120,7 @@ CREATE TABLE `staff` (
   `stf_last_name` varchar(20) NOT NULL,
   `stf_email` varchar(25) NOT NULL,
   `stf_user_name` varchar(15) NOT NULL,
-  `stf_password` varchar(20) NOT NULL,
+  `stf_password` varchar(60) NOT NULL,
   `stf_scientific_title` varchar(20) NOT NULL,
   `stf_functional_class` varchar(10) NOT NULL,
   `dep_id` int(11) DEFAULT NULL,
@@ -140,8 +132,7 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`ID_stf`, `stf_first_name`, `stf_last_name`, `stf_email`, `stf_user_name`, `stf_password`, `stf_scientific_title`, `stf_functional_class`, `dep_id`, `unv_id`) VALUES
-(1, 'ayoob', 'ahmed', 'ayoob.ahmed@gmail.com', 'ayah', '123456', 'DR', '4', 1, NULL),
-(3, 'mohammed', 'ali', 's@gmail.com', '3losh', '12345', 'bcs', '3', 1, 11);
+(4, 'mohammed', 'ali', 'mhmdali@g.c', 'mhmd', '81dc9bdb52d04dc20036dbd8313ed055', 'dr', '1', 5, 12);
 
 -- --------------------------------------------------------
 
@@ -155,7 +146,7 @@ CREATE TABLE `student` (
   `stu_last_name` varchar(20) NOT NULL,
   `stu_email` varchar(25) NOT NULL,
   `stu_user_name` varchar(20) NOT NULL,
-  `stu_password` varchar(20) NOT NULL,
+  `stu_password` varchar(60) NOT NULL,
   `stu_age` date NOT NULL,
   `stu_address` varchar(20) NOT NULL,
   `stu_stage` int(11) NOT NULL,
@@ -169,11 +160,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`ID_stu`, `stu_first_name`, `stu_last_name`, `stu_email`, `stu_user_name`, `stu_password`, `stu_age`, `stu_address`, `stu_stage`, `stu_status`, `corse`, `dep_id`) VALUES
-(1, 'Ali', 'Esaa', 'ali@gmail.com', 'ali', '123456', '2000-11-17', 'Baghdad/mansor', 1, 2, 1, 1),
-(3, 'Ù…Ø­Ù…Ø¯Ø¹Ù„ÙŠ', 'Ù…Ø§Ù„ÙƒÙŠ', 'sifatkhan@gmail.com', '3loshl', '123', '1998-02-05', 'Ø·Ø±ÙŠÙ‚ ÙƒØ±Ø¨Ù„Ø§Ø', 3, 1, 1, 1),
-(4, 'abbas', 'ali', 'a@g.com', 'ab', '1234', '1998-02-06', 'baghdad', 4, 1, 1, 1),
-(5, 'ammer', 'mohamd', 'sa@s.com', 'sa', '123', '1999-02-07', 'bgd', 4, 1, 1, 1),
-(6, 'aya', 'ali', 'aya@gmail.com', 'ayo', '123', '1990-02-09', 'kradaa', 4, 1, 1, 1);
+(17, 'mryam', 'ali', 'ma@g.c', 'meme', '81dc9bdb52d04dc20036dbd8313ed055', '1999-01-02', 'bgh', 3, 1, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -192,7 +179,7 @@ CREATE TABLE `university` (
 --
 
 INSERT INTO `university` (`ID_unv`, `unv_name`, `unv_sub_name`) VALUES
-(11, 'information technology', 'it');
+(12, 'information technology ', 'BIC');
 
 --
 -- Indexes for dumped tables
@@ -264,37 +251,37 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `degrees`
 --
 ALTER TABLE `degrees`
-  MODIFY `ID_deg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID_deg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `ID_dep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_dep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lecture_lab`
 --
 ALTER TABLE `lecture_lab`
-  MODIFY `ID_lec_lab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_lec_lab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `ID_stf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_stf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `ID_stu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_stu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `university`
 --
 ALTER TABLE `university`
-  MODIFY `ID_unv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID_unv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
