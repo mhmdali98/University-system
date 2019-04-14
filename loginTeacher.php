@@ -13,7 +13,7 @@ $link = mysqli_connect($host,$user,$password,$db);
 
 if (isset($_POST['email'])){
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     $sql = "select * from staff where stf_email = '".$email."' AND stf_password = '".$password."'";
 

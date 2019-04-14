@@ -4,20 +4,20 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$password = "";
+$password1 = "";
 $db = "unvdb";
 
-$link = mysqli_connect($host,$user,$password,$db);
+$link = mysqli_connect($host,$user,$password1,$db);
 
 
 
 if (isset($_POST['email'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    $password = md5($password);
     $sql = "select * from student where stu_email = '".$email."' AND stu_password = '".$password."'";
 
-    $result = mysqli_query($link,$sql);
+    $result = mysqli_query($link,$sql); 
 
     $rowcount = mysqli_num_rows($result);
 

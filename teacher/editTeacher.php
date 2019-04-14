@@ -15,7 +15,7 @@ if (isset($_POST['fname'])){
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $userName = $_POST['userName'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $title = $_POST['title'];
     $class = $_POST['class'];
     $dep_id = $_POST['dep_id'];

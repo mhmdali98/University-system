@@ -17,6 +17,7 @@ if (isset($_POST['fname'])){
     $email = $_POST['email'];
     $userName = $_POST['userName'];
     $password = $_POST['password'];
+    $password = md5($password);
     $age = $_POST['age'];
     $address = $_POST['address'];
     $stage = $_POST['stage'];
