@@ -13,7 +13,9 @@ $link = mysqli_connect($host,$user,$password,$db);
 
 if (isset($_POST['email'])){
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
+    $password = md5($password);
+    $password = sha1($password);
 
     $sql = "select * from staff where stf_email = '".$email."' AND stf_password = '".$password."'";
 

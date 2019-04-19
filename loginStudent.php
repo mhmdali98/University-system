@@ -15,6 +15,8 @@ if (isset($_POST['email'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password = md5($password);
+    $password = sha1($password);
+
     $sql = "select * from student where stu_email = '".$email."' AND stu_password = '".$password."'";
 
     $result = mysqli_query($link,$sql); 

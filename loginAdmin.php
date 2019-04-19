@@ -15,6 +15,8 @@ if (isset($_POST['email'])){
     $email =  $_POST['email'];
     $password = $_POST['password'];
     $password = md5($password);
+    $password = sha1($password);
+
 
     $sql = "select * from admin where email = '".$email."' AND pass = '".$password."'";
 

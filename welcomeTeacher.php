@@ -63,21 +63,18 @@ if ($_SESSION['email'] == true){
   <button type="button" class="btn btn-outline-primary "> <a id="icol" href="logOut.php">Logout</a></button>
 </nav>
 
-
+<center>
+<table style="width:30%; color:rgb(88, 88, 88); font-size:1.5rem;">
     <div class="prof">
     <?php
 
     while($row = mysqli_fetch_array($result)){
-        echo  "name: ".$row['stf_first_name']." ".$row['stf_last_name'];
-        echo "<br />";
-        echo  "Email: ".$row['stf_email'];
-        echo "<br />";
-        echo  "userName: ".$row['stf_user_name'];
-        echo "<br />";
-        echo  "scientific_title: ".$row['stf_scientific_title'];
-        echo "<br />";
-        echo  "functional_class: ".$row['stf_functional_class'];
-        echo "<br />";
+        echo  "<tr><th>Name: </th><th>".$row['stf_first_name']." ".$row['stf_last_name']."</th></tr>";
+      
+        echo  "<tr><th>Email: </th><th>".$row['stf_email']."</th></tr>";
+        echo  "<tr><th>userName: </th><th>".$row['stf_user_name']."</th></tr>";
+        echo  "<tr><th>Scientific Title: </th><th> ".$row['stf_scientific_title']."</th></tr>";
+        echo  "<tr><th>Functional: </th><th> ".$row['stf_functional_class']."</th></tr>";
     }
 
 }
@@ -89,6 +86,8 @@ else{
 
 ?>
 </div>
+</table>
+</center>
 </body>
 
 </html>

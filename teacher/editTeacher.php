@@ -15,7 +15,9 @@ if (isset($_POST['fname'])){
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $userName = $_POST['userName'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
+    $password = md5($password);
+    $password = sha1($password);
     $title = $_POST['title'];
     $class = $_POST['class'];
     $dep_id = $_POST['dep_id'];
@@ -113,7 +115,7 @@ if ($_SESSION['email']==true) {
               
   <div class="form-group">
     <label>userName:</label>
-    <input type="email" class="form-control" name="userName"   placeholder="Enter userName" required>
+    <input type="text" class="form-control" name="userName"   placeholder="Enter userName" required>
   </div>
 
   <div class="form-group">

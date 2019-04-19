@@ -63,25 +63,26 @@ if ($_SESSION['email'] == true){
   <button type="button" class="btn btn-outline-primary "> <a id="icol" href="logOut.php">Logout</a></button>
 </nav>
 
-
+<center>
+<table style="width:30%; color:rgb(88, 88, 88); font-size:1.5rem;">
     <div class="prof">
     <?php
 
     while($row = mysqli_fetch_array($result)){
-        echo  "name: ".$row['stu_first_name']." ".$row['stu_last_name'];
-        echo "<br />";
-        echo  "Email: ".$row['stu_email'];
-        echo "<br />";
-        echo  "userName: ".$row['stu_user_name'];
-        echo "<br />";
-        echo  "date birthday: ".$row['stu_age'];
-        echo "<br />";
-        echo  "address: ".$row['stu_address'];
-        echo "<br />";
-        echo  "stage: ".$row['stu_stage'];
-        echo "<br />";
-        echo  "corse: ".$row['corse'];
-        echo "<br />";
+        echo  "<tr><th> Name: </th><th>".$row['stu_first_name']." ".$row['stu_last_name']."</th></tr>";
+      
+        echo  "<tr><th>Email:</th><th> ".$row['stu_email']."</th></tr>";
+       
+        echo  "<tr><th>userName: </th><th>".$row['stu_user_name']."</th></tr>";
+        
+        echo  "<tr><th>Date Birthday: </th><th>".$row['stu_age']."</th></tr>";
+      
+        echo  "<tr><th>Address: </th><th>".$row['stu_address']."</th></tr>";
+        
+        echo  "<tr><th>Stage:</th><th> ".$row['stu_stage']."</th></tr>";
+     
+        echo  "<tr><th>Corse: </th><th>".$row['corse']."</th></tr>";
+       
     }
 
 }
@@ -93,6 +94,8 @@ else{
 
 ?>
 </div>
+</table>
+</center>
 </body>
 
 </html>

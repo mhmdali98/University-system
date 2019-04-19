@@ -90,7 +90,6 @@ if ($_SESSION['email'] == true){
        <?php
        if ($result2) {
        
-
            $i = 0;
            $Deg = 0;
            foreach ($result2 as $sdata) {
@@ -101,8 +100,9 @@ if ($_SESSION['email'] == true){
                $sqlDeg = "SELECT * FROM `degrees` WHERE `stu_id`= $idStu AND `lec_lab_id`=$id1 And `corse`= $cor";
                $resultD = mysqli_query($link,$sqlDeg);    
                foreach ($resultD as $initialD){
+                 if($idStu = $idStu){
                     $Deg= $initialD['deg_number']; 
-                  
+                 }
                   } 
 
                ?>
@@ -114,9 +114,17 @@ if ($_SESSION['email'] == true){
                     <td><?php echo $sdata['stu_email']?></td>
                     <td><?php echo $Deg?></td>
                     <td>
-                    <a  href="insertDegree.php?id1=<?php echo $sdata['ID_stu'];?>&id2=<?php echo $id1;?>">insert</a>&nbsp&nbsp|&nbsp&nbsp
+                      <?php
+                      if($Deg==0){
+                      ?>
+                    <a  href="insertDegree.php?id1=<?php echo $sdata['ID_stu'];?>&id2=<?php echo $id1;?>">insert</a>
+                      <?php }
+                      else{
+                      ?>
                        <a  href="upDateDegree.php?id1=<?php echo $sdata['ID_stu'];?>&id2=<?php echo $id1;?>">Edit</a>
-                    </td>
+                      <?php } ?>
+                      <?php $Deg = 0 ?>
+                      </td>
     </tr>
    
   </tbody>

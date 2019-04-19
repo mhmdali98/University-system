@@ -78,6 +78,8 @@ if ($_SESSION['email'] == true){
 </nav>
 
 <div class="prof">
+
+<center>
     <?php
 
     while($row = mysqli_fetch_array($result)){
@@ -89,9 +91,8 @@ if ($_SESSION['email'] == true){
 else{
     header("location: loginAdmin.php");
 }
-
-
 ?>
+</center>
 </div>
 </body>
 

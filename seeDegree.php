@@ -73,7 +73,7 @@ if ($_SESSION['email'] == true){
     $rowcount2 = mysqli_num_rows($result2);
     while($row2 = mysqli_fetch_array($result2)){
         $idLec= $row2['ID_lec_lab'];
-        echo  $row2['lec_lab_name'].' ';
+        echo  $row2['lec_lab_name'].' : ';
         
         
     
@@ -84,11 +84,10 @@ if ($_SESSION['email'] == true){
 
     $rowcount3 = mysqli_num_rows($result3);
     while($row3 = mysqli_fetch_array($result3)){
-        echo  $row3['deg_number'];
-        echo "<br />";
-      
-       
-    }}
+        echo  $row3['deg_number']." ";       
+    }
+    echo "<br />";
+  }
 
 }
   

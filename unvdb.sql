@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2019 at 11:43 PM
+-- Generation Time: Apr 20, 2019 at 01:49 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `email`, `pass`, `name`) VALUES
-(1, 'admin@uoitc.org', '81dc9bdb52d04dc20036dbd8313ed055', 'admin');
+(1, 'admin@uoitc.org', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', 'admin');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,10 @@ CREATE TABLE `degrees` (
 --
 
 INSERT INTO `degrees` (`ID_deg`, `stu_id`, `lec_lab_id`, `deg_number`, `corse`) VALUES
-(38, 17, 27, 99, 1);
+(51, 17, 28, 88, 1),
+(52, 19, 28, 55, 1),
+(53, 17, 29, 99, 1),
+(54, 19, 29, 76, 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +109,9 @@ CREATE TABLE `lecture_lab` (
 --
 
 INSERT INTO `lecture_lab` (`ID_lec_lab`, `lec_lab_name`, `lec_lab_sub_name`, `id_stf`, `name_stf`, `lec_lab_corse`, `id_dep`, `stageLec`) VALUES
-(27, 'programming langauge in java', 'JAVA', 4, 'mohammed ali', 1, 5, 3);
+(28, 'programming langauge in java', 'JAVA', 5, 'mhmd ali', 1, 5, 3),
+(29, 'programming langauge in C++', 'C++', 5, 'mhmd ali', 1, 5, 3),
+(30, 'programming langauge in python', 'Pytho', 5, 'mhmd ali', 1, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -132,7 +137,8 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`ID_stf`, `stf_first_name`, `stf_last_name`, `stf_email`, `stf_user_name`, `stf_password`, `stf_scientific_title`, `stf_functional_class`, `dep_id`, `unv_id`) VALUES
-(4, 'mohammed', 'ali', 'mhmdali@g.c', 'mhmd', '81dc9bdb52d04dc20036dbd8313ed055', 'dr', '1', 5, 12);
+(5, 'mhmd', 'ali', 'mhmdali@g.c', 'm@uoitc.org', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', 'dr', '4', 5, 12),
+(6, 'husn', 'ameer', 'hus@g.c', 'gg', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', 'dr', '4', 5, 12);
 
 -- --------------------------------------------------------
 
@@ -160,7 +166,8 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`ID_stu`, `stu_first_name`, `stu_last_name`, `stu_email`, `stu_user_name`, `stu_password`, `stu_age`, `stu_address`, `stu_stage`, `stu_status`, `corse`, `dep_id`) VALUES
-(17, 'mryam', 'ali', 'ma@g.c', 'meme', '81dc9bdb52d04dc20036dbd8313ed055', '1999-01-02', 'bgh', 3, 1, 1, 5);
+(17, 'mryam', 'ali', 'ma@g.c', 'meme', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', '1999-01-02', 'bgh', 3, 1, 1, 5),
+(19, 'mohammed', 'ali', 'ma@g.c2', 'ma2', '63982e54a7aeb0d89910475ba6dbd3ca6dd4e5a1', '1998-04-10', 'bgh', 3, 1, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -251,7 +258,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `degrees`
 --
 ALTER TABLE `degrees`
-  MODIFY `ID_deg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_deg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -263,19 +270,19 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `lecture_lab`
 --
 ALTER TABLE `lecture_lab`
-  MODIFY `ID_lec_lab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID_lec_lab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `ID_stf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_stf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `ID_stu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID_stu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `university`
